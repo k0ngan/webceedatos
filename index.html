@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>INICIO</title>
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Iconos y Fuentes -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="icon"
+    href="https://betel-website.s3.us-east-2.amazonaws.com/ceedatos/ceedatos.png"
+    type="image/png"
+  />
+</head>
+<body>
+  <!-- Barra superior (estilo YouTube) -->
+  <header class="top-bar">
+    <div class="menu-icon" onclick="toggleSideMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="top-bar-logo">
+      <img
+        src="https://betel-website.s3.us-east-2.amazonaws.com/ceedatos/ceedatos.png"
+        alt="Logo Betel"
+      />
+    </div>
+  </header>
+
+  <!-- Menú lateral deslizante -->
+  <nav id="side-menu" aria-label="Menú lateral" role="navigation">
+    <ul role="menu">
+      <li role="menuitem"><a href="index.html" onclick="closeSideMenu()">INICIO</a></li>
+      <li role="menuitem"><a href="otec.html" onclick="closeSideMenu()">MATERIAl</a></li>
+    </ul>
+  </nav>
+
+  <!-- Overlay oscuro para el menú -->
+  <div id="overlay" onclick="closeSideMenu()"></div>
+
+  <!-- Sección Hero (imagen de fondo principal) -->
+  <section
+    id="main-header"
+    class="hero-section"
+    style="background-image: url('https://betel-website.s3.us-east-2.amazonaws.com/ceedatos/anti.png');"
+  >
+    <h1>CEEDATOS</h1>
+  </section>
+  <!-- Sección "Quiénes Somos" -->
+  <section id="quienes-somos">
+    <h2>Quiénes Somos</h2>
+    <h3>Ciencia de datos</h3>
+    <p>
+        El Ingeniero Civil en Ciencia de Datos UTEM es un profesional de excelencia que, humana, científica y tecnológicamente está preparado/a tanto para generar, transferir, aplicar y difundir el conocimiento científico y tecnológico, en consonancia con el desarrollo sustentable del país. Su formación en las áreas de Gestión del conocimiento, Ingeniería Computacional e Ingeniería de Datos, le permiten desempeñarse en organizaciones públicas y privadas en áreas tales como comercial, industrial, académico y de servicios, con una visión integradora, proactiva, participativa y ética, desenvolviéndose como consultor o ejecutivo en área de inteligencia de negocios, consultor de sistemas de información en ambiente de Big Data, Ingeniero de Datos o jefe de proyectos en innovación tecnológica y desarrollo de productos inteligentes en las organizaciones.
+    </p>
+    <h3>CENTRO DE ALUMNOS</h3>
+    <p>
+      SOMOS 5 Y A DOS SE COMEN A LOS MECHONES
+    </p>
+    <!-- Se mantiene la inclusión de psicólogos clínicos y asistentes sociales -->
+    
+    <!-- Se ha removido el párrafo de Cesfam para mover esa información a casos.html -->
+  </section>
+  
+  <!-- Sección de Contacto -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <div class="contacto-info">
+      <p><strong>Correo electrónico:</strong> contacto@betel-otec.cl</p>
+      <p><strong>Teléfono:</strong> +56 9 1234 5678</p>
+    </div>
+    <div class="contacto-formulario">
+      <form action="https://formspree.io/f/mldjplye" method="POST">
+        <input type="text" name="name" placeholder="Nombre" required/>
+        <input type="text" name="name" placeholder="Tamaño de Tula" required/>
+        <input type="email" name="email" placeholder="Correo electrónico" required/>
+        <textarea name="message" rows="4" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Botón para subir arriba -->
+  <button id="btn-subir" onclick="scrollToTop()">↑</button>
+
+  <!-- Botón Chat Asistente -->
+  <button class="chat-toggle" onclick="toggleChat()">Chat Asistente</button>
+
+  <!-- Contenedor principal del chat -->
+  <div class="chat-max-container" id="chat-max-container">
+    <!-- Barra superior con logo y botón cerrar -->
+    <div class="chat-max-header">
+      <img
+        src="https://betel-website.s3.us-east-2.amazonaws.com/logos.png"
+        alt="Logo Max"
+        class="chat-max-logo"
+      />
+      <button class="chat-max-close" onclick="toggleChat()">×</button>
+    </div>
+    <!-- Subencabezado con disclaimers, fecha/hora -->
+    <div class="chat-max-subheader">
+      <p class="chat-max-time">Hoy a las 22:31</p>
+      <p class="chat-max-disclaimer">
+        Los chats son grabados con fines de servicio al cliente para operar y mejorar
+        nuestros servicios. Al utilizar el chat, aceptas este uso de los datos.
+      </p>
+    </div>
+    <!-- Zona de mensajes -->
+    <div class="chat-max-messages" id="chat-messages">
+      <div class="chat-max-bubble bot-bubble">
+        <p>¡Hola! Soy tu asistente digital. <br>
+        Selecciona una opción para empezar:</p>
+      </div>
+    </div>
+    <!-- Contenedor para botones del chat -->
+    <div class="chat-buttons-container" id="chat-buttons-container"></div>
+  </div>
+<!-- Footer ordenado -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-column">
+      <h3>Acerca de Betel</h3>
+      <p>
+        Nuestra prioridad es integrar las últimas tecnologías y protocolos de vanguardia para asegurar servicios de excelencia a nuestros clientes.
+      </p>
+    </div>
+    <div class="footer-column">
+      <h3>Contacto</h3>
+      <p>E-MAIL: contacto@ceedatos.cl</p>
+      <h4>Síguenos</h4>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h3>Servicios</h3>
+      <ul>
+        <!-- Se podrían enlazar de forma parecida a index.html#servicios-betel o directamente a index.html si se desea -->
+        <li><a href="index.html">Gestión de Ausentismo</a></li>
+        <li><a href="index.html">Salud Ocupacional</a></li>
+        <li><a href="index.html">Calidad de Vida Laboral</a></li>
+        <li><a href="index.html">Intervención en Crisis</a></li>
+        <li><a href="index.html">Prevención de Riesgos</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Empresa</h3>
+      <ul>
+        <!-- Se puede enlazar a index.html#quienes-somos -->
+        <li><a href="index.html#quienes-somos">Nosotros</a></li>
+        <li><a href="index.html">Compromiso con la Calidad</a></li>
+        <li><a href="index.html">Clientes</a></li>
+        <li><a href="casos.html">Casos de exito</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Programas Especiales</h3>
+      <ul>
+        <li><a href="index.html">Ley Karin</a></li>
+        <li><a href="index.html">Inclusión Laboral</a></li>
+        <li><a href="index.html">Atención a Grupos de Riesgo</a></li>
+        <li><a href="index.html">Emergencias en Faena</a></li>
+        <li><a href="index.html">Team Building</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Contáctanos</h3>
+      <p>Si tienes dudas o quieres más información, no dudes en escribirnos.</p>
+      <a href="mailto:contacto@betel.cl" class="btn">Enviar Mensaje</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 BETEL. Todos los derechos reservados.</p>
+    <div class="dmca">
+      <!-- Logo DMCA -->
+    </div>
+  </div>
+</footer>
+  <!-- Se incluye el script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
